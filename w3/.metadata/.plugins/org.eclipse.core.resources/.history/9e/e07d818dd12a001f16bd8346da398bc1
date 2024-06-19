@@ -1,0 +1,5 @@
+package com.banco.client.service;
+
+public interface ClientServiceLocal {
+
+}

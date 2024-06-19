@@ -1,0 +1,9 @@
+package com.banco.account.repository;
+
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+
+import com.banco.account.model.Account;
+
+public interface AccountRepository extends ReactiveMongoRepository<Account,String>{
+
+}

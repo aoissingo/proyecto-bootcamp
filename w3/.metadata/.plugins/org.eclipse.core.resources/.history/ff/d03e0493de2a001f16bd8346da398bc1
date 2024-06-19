@@ -1,0 +1,5 @@
+package com.banco.account.model;
+
+public class Account {
+
+}

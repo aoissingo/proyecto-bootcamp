@@ -1,0 +1,10 @@
+package com.banco.client.model;
+
+import lombok.Data;
+
+@Data
+public class AuthorizedSigner {
+    private String signerId;
+    private String name;
+    private String role;
+}

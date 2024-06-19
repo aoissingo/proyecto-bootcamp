@@ -1,0 +1,5 @@
+package com.banco.credit.service;
+
+public interface CreditServiceLocal {
+
+}

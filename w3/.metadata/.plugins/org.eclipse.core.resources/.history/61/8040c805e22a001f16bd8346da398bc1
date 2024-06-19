@@ -1,0 +1,5 @@
+package com.banco.credit.model;
+
+public class Credit {
+
+}

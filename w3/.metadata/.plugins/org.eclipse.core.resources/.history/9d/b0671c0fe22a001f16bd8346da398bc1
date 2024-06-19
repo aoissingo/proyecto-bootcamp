@@ -1,0 +1,5 @@
+package com.banco.credit.repository;
+
+public interface CreditRepository {
+
+}

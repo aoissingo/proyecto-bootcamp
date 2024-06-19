@@ -1,0 +1,5 @@
+package com.banco.account.controller;
+
+public class AccountController {
+
+}

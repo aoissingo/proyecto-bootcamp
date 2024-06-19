@@ -1,0 +1,134 @@
+package com.banco.client.controller;
+
+import com.banco.client.model.Client;
+import com.banco.client.service.ClientServiceLocal;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.web.reactive.server.WebTestClient;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+@WebFluxTest(controllers = ClientController.class)
+public class ClientControllerTest {
+
+    @Autowired
+    private WebTestClient webTestClient;
+
+    @MockBean
+    private ClientServiceLocal clientService;
+
+    @BeforeEach
+    void setUp() {
+        // Initialization if needed
+    }
+
+    @Test
+    void testGetAllClient() {
+        Client client = new Client();
+        client.setId("1");
+        client.setName("Test Client");
+
+        Mockito.when(clientService.getAllClient()).thenReturn(Flux.just(client));
+
+        webTestClient.get().uri("/clients")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBodyList(Client.class)
+                .hasSize(1)
+                .consumeWith(response -> {
+                    List<Client> clients = response.getResponseBody();
+                    System.out.println("Response body Listar: " + clients);
+                    assertThat(clients).isNotNull();
+                    assertThat(clients).hasSize(1);
+                    assertThat(clients.get(0).getId()).isEqualTo("1");
+                    assertThat(clients.get(0).getName()).isEqualTo("Test Client");
+                });
+    }
+
+    @Test
+    void testGetClientById() {
+        Client client = new Client();
+        client.setId("1");
+        client.setName("Test Client");
+
+        Mockito.when(clientService.getClientById("1")).thenReturn(Mono.just(client));
+
+        webTestClient.get().uri("/clients/1")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(Client.class)
+                .consumeWith(response -> {
+                    Client responseBody = response.getResponseBody();
+                    System.out.println("Response body buscar x porID: " + responseBody);
+                    assertThat(responseBody).isNotNull();
+                    assertThat(responseBody.getId()).isEqualTo("1");
+                    assertThat(responseBody.getName()).isEqualTo("Test Client");
+                });
+    }
+
+    @Test
+    void testCreateClient() {
+        Client client = new Client();
+        client.setId("1");
+        client.setName("Test Client");
+
+        Mockito.when(clientService.createClient(Mockito.any(Client.class))).thenReturn(Mono.just(client));
+
+        webTestClient.post().uri("/clients")
+                .bodyValue(client)
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(Client.class)
+                .consumeWith(response -> {
+                    Client responseBody = response.getResponseBody();
+                    System.out.println("Response body: " + responseBody);
+                    assertThat(responseBody).isNotNull();
+                    assertThat(responseBody.getId()).isEqualTo("1");
+                    assertThat(responseBody.getName()).isEqualTo("Test Client");
+                });
+    }
+
+    @Test
+    void testUpdateClient() {
+        Client client = new Client();
+        client.setId("1");
+        client.setName("Updated Client");
+
+        Mockito.when(clientService.updateClient(Mockito.eq("1"), Mockito.any(Client.class))).thenReturn(Mono.just(client));
+
+        webTestClient.put().uri("/clients/1")
+                .bodyValue(client)
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(Client.class)
+                .consumeWith(response -> {
+                    Client responseBody = response.getResponseBody();
+                    System.out.println("Response body: " + responseBody);
+                    assertThat(responseBody).isNotNull();
+                    assertThat(responseBody.getId()).isEqualTo("1");
+                    assertThat(responseBody.getName()).isEqualTo("Updated Client");
+                });
+    }
+
+    @Test
+    void testDeleteClient() {
+        Mockito.when(clientService.deleteClient("1")).thenReturn(Mono.empty());
+
+        webTestClient.delete().uri("/clients/1")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(Void.class)
+                .consumeWith(response -> {
+                    System.out.println("Delete response: " + response);
+                    assertThat(response.getResponseBody()).isNull();
+                });
+    }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="credit" project="credit" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="com.banco.credit.CreditApplicationTests" time="0.594" displayname="CreditApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.banco.credit.CreditApplicationTests]">
+    <testcase name="contextLoads" classname="com.banco.credit.CreditApplicationTests" time="0.594" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.banco.credit.CreditApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+  <testsuite name="com.banco.credit.controller.CreditControllerTest" time="0.413" displayname="CreditControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.banco.credit.controller.CreditControllerTest]">
+    <testcase name="testUpdateCredit" classname="com.banco.credit.controller.CreditControllerTest" time="0.297" displayname="testUpdateCredit()" uniqueid="[engine:junit-jupiter]/[class:com.banco.credit.controller.CreditControllerTest]/[method:testUpdateCredit()]"/>
+    <testcase name="testDeleteCredit" classname="com.banco.credit.controller.CreditControllerTest" time="0.017" displayname="testDeleteCredit()" uniqueid="[engine:junit-jupiter]/[class:com.banco.credit.controller.CreditControllerTest]/[method:testDeleteCredit()]"/>
+    <testcase name="testSaveCredit" classname="com.banco.credit.controller.CreditControllerTest" time="0.017" displayname="testSaveCredit()" uniqueid="[engine:junit-jupiter]/[class:com.banco.credit.controller.CreditControllerTest]/[method:testSaveCredit()]"/>
+    <testcase name="testFindAllCredits" classname="com.banco.credit.controller.CreditControllerTest" time="0.051" displayname="testFindAllCredits()" uniqueid="[engine:junit-jupiter]/[class:com.banco.credit.controller.CreditControllerTest]/[method:testFindAllCredits()]"/>
+    <testcase name="testFindCreditById" classname="com.banco.credit.controller.CreditControllerTest" time="0.019" displayname="testFindCreditById()" uniqueid="[engine:junit-jupiter]/[class:com.banco.credit.controller.CreditControllerTest]/[method:testFindCreditById()]"/>
+  </testsuite>
+</testrun>

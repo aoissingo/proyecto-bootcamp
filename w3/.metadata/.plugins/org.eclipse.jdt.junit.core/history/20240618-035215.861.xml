@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="account" project="account" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="com.banco.account.AccountApplicationTests" time="0.576" displayname="AccountApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.banco.account.AccountApplicationTests]">
+    <testcase name="contextLoads" classname="com.banco.account.AccountApplicationTests" time="0.576" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.banco.account.AccountApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+  <testsuite name="com.banco.account.controller.AccountControllerTest" time="0.4" displayname="AccountControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.banco.account.controller.AccountControllerTest]">
+    <testcase name="testCreateAccount" classname="com.banco.account.controller.AccountControllerTest" time="0.272" displayname="testCreateAccount()" uniqueid="[engine:junit-jupiter]/[class:com.banco.account.controller.AccountControllerTest]/[method:testCreateAccount()]"/>
+    <testcase name="testGetAccountById" classname="com.banco.account.controller.AccountControllerTest" time="0.025" displayname="testGetAccountById()" uniqueid="[engine:junit-jupiter]/[class:com.banco.account.controller.AccountControllerTest]/[method:testGetAccountById()]"/>
+    <testcase name="testUpdateAccount" classname="com.banco.account.controller.AccountControllerTest" time="0.014" displayname="testUpdateAccount()" uniqueid="[engine:junit-jupiter]/[class:com.banco.account.controller.AccountControllerTest]/[method:testUpdateAccount()]"/>
+    <testcase name="testGetAllAccounts" classname="com.banco.account.controller.AccountControllerTest" time="0.066" displayname="testGetAllAccounts()" uniqueid="[engine:junit-jupiter]/[class:com.banco.account.controller.AccountControllerTest]/[method:testGetAllAccounts()]"/>
+    <testcase name="testDeleteAccount" classname="com.banco.account.controller.AccountControllerTest" time="0.014" displayname="testDeleteAccount()" uniqueid="[engine:junit-jupiter]/[class:com.banco.account.controller.AccountControllerTest]/[method:testDeleteAccount()]"/>
+  </testsuite>
+</testrun>

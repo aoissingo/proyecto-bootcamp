@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.banco.client.model.Client"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.banco.account.model.Account"/>
+    <fullyQualifiedTypeName name="com.banco.account.service.AccountServiceLocal"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="com.banco.transaction.model.Transaction"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+</qualifiedTypeNameHistroy>

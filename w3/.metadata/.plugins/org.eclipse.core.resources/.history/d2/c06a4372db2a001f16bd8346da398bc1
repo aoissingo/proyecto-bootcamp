@@ -1,0 +1,3 @@
+spring.application.name=client-service
+#spring.data.mongodb.uri=mongodb+srv://aoissingo1:82QpqIVu4tLGH1wq@cluster0.pzyzvot.mongodb.net/banco?retryWrites=true&w=majority
+server.port=8081

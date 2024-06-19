@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="client" project="client" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="com.banco.client.ClientApplicationTests" time="0.708" displayname="ClientApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.banco.client.ClientApplicationTests]">
+    <testcase name="contextLoads" classname="com.banco.client.ClientApplicationTests" time="0.708" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.banco.client.ClientApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+  <testsuite name="com.banco.client.controller.ClientControllerTest" time="0.497" displayname="ClientControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.banco.client.controller.ClientControllerTest]">
+    <testcase name="testGetClientById" classname="com.banco.client.controller.ClientControllerTest" time="0.382" displayname="testGetClientById()" uniqueid="[engine:junit-jupiter]/[class:com.banco.client.controller.ClientControllerTest]/[method:testGetClientById()]"/>
+    <testcase name="testUpdateClient" classname="com.banco.client.controller.ClientControllerTest" time="0.027" displayname="testUpdateClient()" uniqueid="[engine:junit-jupiter]/[class:com.banco.client.controller.ClientControllerTest]/[method:testUpdateClient()]"/>
+    <testcase name="testDeleteClient" classname="com.banco.client.controller.ClientControllerTest" time="0.021" displayname="testDeleteClient()" uniqueid="[engine:junit-jupiter]/[class:com.banco.client.controller.ClientControllerTest]/[method:testDeleteClient()]"/>
+    <testcase name="testGetAllClient" classname="com.banco.client.controller.ClientControllerTest" time="0.042" displayname="testGetAllClient()" uniqueid="[engine:junit-jupiter]/[class:com.banco.client.controller.ClientControllerTest]/[method:testGetAllClient()]"/>
+    <testcase name="testCreateClient" classname="com.banco.client.controller.ClientControllerTest" time="0.016" displayname="testCreateClient()" uniqueid="[engine:junit-jupiter]/[class:com.banco.client.controller.ClientControllerTest]/[method:testCreateClient()]"/>
+  </testsuite>
+</testrun>

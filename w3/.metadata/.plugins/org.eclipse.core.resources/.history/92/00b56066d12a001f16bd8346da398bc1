@@ -1,0 +1,8 @@
+package com.banco.client.repository;
+
+import com.banco.client.model.Client;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+
+public class ClientRepository extends ReactiveMongoRepository<Client,String>{
+
+}

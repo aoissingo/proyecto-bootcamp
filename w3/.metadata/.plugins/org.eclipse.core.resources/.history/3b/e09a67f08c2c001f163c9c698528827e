@@ -1,0 +1,3 @@
+spring.application.name=credit-service
+spring.data.mongodb.uri=mongodb://localhost:27017/bank
+server.port=8083

@@ -1,0 +1,5 @@
+package com.banco.credit.controller;
+
+public class CreditController {
+
+}

@@ -1,0 +1,1454 @@
+{
+	"info": {
+		"_postman_id": "844d3c5c-d554-430b-a169-a9a9f1142393",
+		"name": "LOCAL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "search_products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:03:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"664ee517a6151570d21f3c28\",\n        \"name\": \"John's Savings Account\",\n        \"type\": \"savings\",\n        \"customerId\": \"c1\",\n        \"balance\": 5000,\n        \"creditLimit\": 0,\n        \"limitMonthlyTransactions\": 10,\n        \"maintenanceFee\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "save_product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"acc003\",\r\n  \"type\": \"fixed\",\r\n  \"balance\": 10000,\r\n  \"maintenanceFee\": 5,\r\n  \"maxTransactions\": null,\r\n  \"customerId\": \"cust003\",\r\n  \"owners\": [\r\n    \"owner001\",\r\n    \"owner002\"\r\n  ],\r\n  \"authorizedSigners\": [\r\n    \"signer001\",\r\n    \"signer002\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:03:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"664ee517a6151570d21f3c28\",\n        \"name\": \"John's Savings Account\",\n        \"type\": \"savings\",\n        \"customerId\": \"c1\",\n        \"balance\": 5000,\n        \"creditLimit\": 0,\n        \"limitMonthlyTransactions\": 10,\n        \"maintenanceFee\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update_product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"savings\",\r\n  \"balance\": 10000,\r\n  \"maintenanceFee\": 5,\r\n  \"maxTransactions\": null,\r\n  \"customerId\": \"cust003\",\r\n  \"owners\": [\r\n    \"owner001\",\r\n    \"owner002\"\r\n  ],\r\n  \"authorizedSigners\": [\r\n    \"signer001\",\r\n    \"signer002\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/accounts/acc003",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"accounts",
+								"acc003"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:03:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"664ee517a6151570d21f3c28\",\n        \"name\": \"John's Savings Account\",\n        \"type\": \"savings\",\n        \"customerId\": \"c1\",\n        \"balance\": 5000,\n        \"creditLimit\": 0,\n        \"limitMonthlyTransactions\": 10,\n        \"maintenanceFee\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "delete_product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"savings\",\r\n  \"balance\": 10000,\r\n  \"maintenanceFee\": 5,\r\n  \"maxTransactions\": null,\r\n  \"customerId\": \"cust003\",\r\n  \"owners\": [\r\n    \"owner001\",\r\n    \"owner002\"\r\n  ],\r\n  \"authorizedSigners\": [\r\n    \"signer001\",\r\n    \"signer002\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/accounts/acc003",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"accounts",
+								"acc003"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:03:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"664ee517a6151570d21f3c28\",\n        \"name\": \"John's Savings Account\",\n        \"type\": \"savings\",\n        \"customerId\": \"c1\",\n        \"balance\": 5000,\n        \"creditLimit\": 0,\n        \"limitMonthlyTransactions\": 10,\n        \"maintenanceFee\": 0\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "clients",
+			"item": [
+				{
+					"name": "search_clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/clients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"clients"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:12:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"66501360361474f816a01b47\",\n        \"name\": \"John Doe\",\n        \"type\": \"personal\",\n        \"email\": \"john.doe@example.com\",\n        \"phoneNumber\": \"1234567890\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "save_client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"cust004\",\r\n  \"name\": \"Delta Enterprises\",\r\n  \"type\": \"business\",\r\n  \"address\": \"789 Birch St\",\r\n  \"phone\": \"555-3456\",\r\n  \"email\": \"support@deltaenterprises.com\",\r\n  \"owners\": [\r\n    {\r\n      \"ownerId\": \"owner007\",\r\n      \"name\": \"Mia Clark\",\r\n      \"role\": \"CEO\"\r\n    },\r\n    {\r\n      \"ownerId\": \"owner008\",\r\n      \"name\": \"Noah Wilson\",\r\n      \"role\": \"CFO\"\r\n    }\r\n  ],\r\n  \"authorizedSigners\": [\r\n    {\r\n      \"signerId\": \"signer007\",\r\n      \"name\": \"Olivia Martinez\",\r\n      \"role\": \"Manager\"\r\n    },\r\n    {\r\n      \"signerId\": \"signer008\",\r\n      \"name\": \"Paul Walker\",\r\n      \"role\": \"Assistant Manager\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/clients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"clients"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:12:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"66501360361474f816a01b47\",\n        \"name\": \"John Doe\",\n        \"type\": \"personal\",\n        \"email\": \"john.doe@example.com\",\n        \"phoneNumber\": \"1234567890\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update_client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Delta Enterprises\",\r\n  \"type\": \"business\",\r\n  \"address\": \"789 Birch St\",\r\n  \"phone\": \"555-3456\",\r\n  \"email\": \"frankramos@bcp.com.pe\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/clients/cust003",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients",
+								"cust003"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/clients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"clients"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:12:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"66501360361474f816a01b47\",\n        \"name\": \"John Doe\",\n        \"type\": \"personal\",\n        \"email\": \"john.doe@example.com\",\n        \"phoneNumber\": \"1234567890\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "delete_client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Delta Enterprises\",\r\n  \"type\": \"business\",\r\n  \"address\": \"789 Birch St\",\r\n  \"phone\": \"555-3456\",\r\n  \"email\": \"frankramos@bcp.com.pe\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/clients/cust003",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients",
+								"cust003"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/clients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"clients"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:12:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"66501360361474f816a01b47\",\n        \"name\": \"John Doe\",\n        \"type\": \"personal\",\n        \"email\": \"john.doe@example.com\",\n        \"phoneNumber\": \"1234567890\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "credits",
+			"item": [
+				{
+					"name": "search_credits",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/credits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"credits"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "save_credits",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"cred004\",\r\n        \"type\": \"personal\",\r\n        \"amount\": 5000.0,\r\n        \"interestRate\": 3.5,\r\n        \"term\": 36,\r\n        \"customerId\": \"cust002\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/credits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"credits"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update_credits",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"cred004\",\r\n        \"type\": \"business\",\r\n        \"amount\": 5000.0,\r\n        \"interestRate\": 3.5,\r\n        \"term\": 36,\r\n        \"customerId\": \"cust001\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/credits/cred004",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"credits",
+								"cred004"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "delete_credits",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"cred004\",\r\n        \"type\": \"personal\",\r\n        \"amount\": 5000.0,\r\n        \"interestRate\": 3.5,\r\n        \"term\": 36,\r\n        \"customerId\": \"cust001\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/credits/cred004",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"credits",
+								"cred004"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "search_transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "save_transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": \"trans005\",\r\n        \"type\": \"deposit\",\r\n        \"amount\": 700.0,\r\n        \"date\": \"2024-06-01\",\r\n        \"accountId\": \"acc001\",\r\n        \"creditId\": null\r\n }\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update_transaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {        \r\n        \"type\": \"credit card\",\r\n        \"amount\": 900.0,\r\n        \"date\": \"2024-06-01\",\r\n        \"accountId\": \"acc001\",\r\n        \"creditId\": null\r\n }\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/transactions/trans005",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"transactions",
+								"trans005"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "delete_transaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {        \r\n        \"type\": \"credit card\",\r\n        \"amount\": 900.0,\r\n        \"date\": \"2024-06-01\",\r\n        \"accountId\": \"acc001\",\r\n        \"creditId\": null\r\n }\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/transactions/trans005",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"transactions",
+								"trans005"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "config-server",
+			"item": [
+				{
+					"name": "account-service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/account-service/dev",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"account-service",
+								"dev"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "client-service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/client-service/dev",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"client-service",
+								"dev"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "credit_service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/credit-service/dev",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"credit-service",
+								"dev"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "transactions_service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/transaction-service/dev",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"transaction-service",
+								"dev"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 May 2024 04:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"665013ec361474f816a01b4a\",\n        \"productId\": \"p1\",\n        \"type\": \"deposit\",\n        \"amount\": 1000,\n        \"timestamp\": \"2024-05-01T10:00:00\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}

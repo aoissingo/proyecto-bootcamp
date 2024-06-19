@@ -1,0 +1,7 @@
+package com.banco.client.repository;
+
+import com.banco.client.model.Client;
+
+public class ClientRepository extends ReactiveMongoRepository<Client,String>{
+
+}

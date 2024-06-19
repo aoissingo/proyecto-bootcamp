@@ -1,0 +1,5 @@
+package com.banco.transaction.model;
+
+public class Transaction {
+
+}

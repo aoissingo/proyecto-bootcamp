@@ -1,0 +1,107 @@
+package com.banco.client.controller;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.test.web.reactive.server.WebTestClient;
+
+import com.banco.client.model.Client;
+import com.banco.client.service.ClientServiceLocal;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+public class ClientControllerTest {
+
+    @InjectMocks
+    private ClientController clientController;
+
+    @Mock
+    private ClientServiceLocal clientService;
+
+    private WebTestClient webTestClient;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+        webTestClient = WebTestClient.bindToController(clientController).build();
+    }
+
+    @Test
+    void testGetAllClient() {
+        Client client = new Client();
+        client.setId("1");
+        client.setName("Test Client");
+
+        when(clientService.getAllClient()).thenReturn(Flux.just(client));
+
+        webTestClient.get().uri("/clients")
+            .exchange()
+            .expectStatus().isOk()
+            .expectBodyList(Client.class)
+            .hasSize(1)
+            .contains(client);
+    }
+
+    @Test
+    void testGetClientById() {
+        Client client = new Client();
+        client.setId("1");
+        client.setName("Test Client");
+
+        when(clientService.getClientById(anyString())).thenReturn(Mono.just(client));
+
+        webTestClient.get().uri("/clients/{id}", "1")
+            .exchange()
+            .expectStatus().isOk()
+            .expectBody(Client.class)
+            .isEqualTo(client);
+    }
+
+    @Test
+    void testCreateClient() {
+        Client client = new Client();
+        client.setId("1");
+        client.setName("Test Client");
+
+        when(clientService.createClient(any(Client.class))).thenReturn(Mono.just(client));
+
+        webTestClient.post().uri("/clients")
+            .bodyValue(client)
+            .exchange()
+            .expectStatus().isOk()
+            .expectBody(Client.class)
+            .isEqualTo(client);
+    }
+
+    @Test
+    void testUpdateClient() {
+        Client client = new Client();
+        client.setId("1");
+        client.setName("Updated Client");
+
+        when(clientService.updateClient(anyString(), any(Client.class))).thenReturn(Mono.just(client));
+
+        webTestClient.put().uri("/clients/{id}", "1")
+            .bodyValue(client)
+            .exchange()
+            .expectStatus().isOk()
+            .expectBody(Client.class)
+            .isEqualTo(client);
+    }
+
+    @Test
+    void testDeleteClient() {
+        when(clientService.deleteClient(anyString())).thenReturn(Mono.empty());
+
+        webTestClient.delete().uri("/clients/{id}", "1")
+            .exchange()
+            .expectStatus().isOk();
+    }
+}

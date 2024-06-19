@@ -1,0 +1,8 @@
+package com.banco.credit.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class CreditServiceImpl implements CreditServiceLocal{
+
+}

@@ -1,0 +1,14 @@
+package com.banco.transaction.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.banco.transaction.repository.TransactionRepository;
+
+@Service
+public class TransactionServiceImpl implements TransactionServiceLocal{
+	
+	@Autowired
+    private TransactionRepository transactionRepository;
+
+}

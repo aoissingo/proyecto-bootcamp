@@ -1,0 +1,14 @@
+package com.banco.credit.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class CreditControllerTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,6 @@
+package com.banco.credit.service;
+
+@Service
+public class CreditServiceImpl {
+
+}
